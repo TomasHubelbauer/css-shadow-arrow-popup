@@ -1,0 +1,38 @@
+body {
+	font: icon;
+}
+
+#shadowDiv {
+  --square-root-of-2: 1.41421356237;
+
+  background: var(--background-color);
+  border: var(--border-thickness) solid var(--border-color);
+  border-radius: 5px;
+  display: inline-block;
+  filter: drop-shadow(0 0 2px black);
+	min-height: calc((var(--arrow-size) + var(--border-thickness) * var(--square-root-of-2)) * 2);
+	padding: 1em;
+  position: relative;
+}
+
+#shadowDiv::after {
+	border: calc(var(--arrow-size)) solid transparent;
+	border-left-color: var(--background-color);
+	content: '';
+	height: 0;
+  left: 100%;
+	position: absolute;
+	top: calc(50% - var(--arrow-size));
+	width: 0;
+}
+
+#shadowDiv::before {
+	border: calc(var(--arrow-size) + var(--border-thickness) * var(--square-root-of-2)) solid transparent;
+	border-left-color: var(--border-color);
+	content: '';
+	height: 0;
+  left: 100%;
+	position: absolute;
+	top: calc(50% - var(--arrow-size) - var(--border-thickness) * var(--square-root-of-2));
+	width: 0;
+}
