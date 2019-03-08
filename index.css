@@ -21,8 +21,11 @@ body {
 	content: '';
 	height: 0;
 	position: absolute;
-	top: calc(50% - var(--arrow-size));
 	width: 0;
+}
+
+.arrowPopupHorizontal::after {
+	top: calc(50% - var(--arrow-size));
 }
 
 .arrowPopupRight::after {
@@ -35,13 +38,30 @@ body {
   right: 100%;
 }
 
+.arrowPopupVertical::after {
+	bottom: 100%;
+	left: calc(50% - var(--arrow-size));
+}
+
+.arrowPopupTop::after {
+	border-bottom-color: var(--background-color);
+}
+
+.arrowPopupBottom::after {
+	border-top-color: var(--background-color);
+	top: 100%;
+}
+
 .arrowPopup::before {
 	border: calc(var(--arrow-size) + var(--border-thickness) * var(--square-root-of-2)) solid transparent;
 	content: '';
 	height: 0;
 	position: absolute;
-	top: calc(50% - var(--arrow-size) - var(--border-thickness) * var(--square-root-of-2));
 	width: 0;
+}
+
+.arrowPopupHorizontal::before {
+	top: calc(50% - var(--arrow-size) - var(--border-thickness) * var(--square-root-of-2));
 }
 
 .arrowPopupRight::before {
@@ -52,4 +72,18 @@ body {
 .arrowPopupLeft::before {
 	border-right-color: var(--border-color);
   right: 100%;
+}
+
+.arrowPopupVertical::before {
+	left: calc(50% - var(--arrow-size) - var(--border-thickness) * var(--square-root-of-2));
+}
+
+.arrowPopupTop::before {
+	border-bottom-color: var(--border-color);
+	bottom: 100%;
+}
+
+.arrowPopupBottom::before {
+	border-top-color: var(--border-color);
+	top: 100%;
 }
